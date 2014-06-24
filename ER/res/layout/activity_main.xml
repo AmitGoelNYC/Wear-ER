@@ -5,15 +5,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.er.MainActivity"
     tools:ignore="MergeRootFrame" >
-
-    <TextView 
-        android:id="@+id/tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp" 
-        android:text="Patient Name :"
-        android:layout_marginLeft="100dp"/>
     
     <Spinner
         android:id="@+id/spinner"
@@ -22,42 +13,77 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp" 
         android:layout_toRightOf="@+id/tv"/>
+    <!--<Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp" />-->
 
     <EditText
         android:id="@+id/edittext"
-        android:hint="Please explain the condition or ailment of patient"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/spinner"
-        android:layout_marginLeft="140dp"
-        android:layout_marginRight="140dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:hint="@+string/edittextdefaultinstruction" />
 
-    <TextView 
+    <!-- 
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/edittext"
+        android:layout_marginTop="20dp" />-->
+    
+<!-- 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="52dp"
+        android:onClick="@string/msg"
+        android:text="@string/submit_button_text" /> -->
+
+    <TextView
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="110dp" 
-        android:text="Plan of Action :"
-        android:layout_marginLeft="100dp"
-        android:layout_below="@+id/edittext" />
-    
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/edittext"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="38dp"
+        android:text="Plan of Action :" />
+
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edittext"
-        android:layout_marginTop="100dp"
-        android:layout_toRightOf="@+id/tv1" />
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv1" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:onClick="@string/msg"
         android:text="@string/submit_button_text" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv1"
+        android:layout_alignTop="@+id/spinner"
+        android:layout_marginLeft="45dp"
+        android:text="Patient Name :" />
 
 </RelativeLayout>

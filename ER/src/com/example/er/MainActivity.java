@@ -1,6 +1,5 @@
 package com.example.er;
 
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.Notification;
@@ -8,6 +7,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -89,17 +89,17 @@ public class MainActivity extends Activity {
 					.setContentTitle("Patient")
 					.setContentText(
 							patient
-									+ " in Critical Care need immediate assistance")
+									+ " in Critical Care needs immediate assistance")
 					.setContentIntent(viewPendingIntent)
 					.setLargeIcon(
 							BitmapFactory.decodeResource(getResources(),
 									R.drawable.rsz_darkblu));
-					
-			// Create the remote input
-			RemoteInput remoteInput = new RemoteInput.Builder("Reply")
-			        .setLabel("Reply")
-			        .build();
 			
+			// Create the remote input
+						RemoteInput remoteInput = new RemoteInput.Builder("Reply")
+						        .setLabel("Reply")
+						        .build();
+
 			// Create a big text style for the second page
 			BigTextStyle secondPageStyle = new NotificationCompat.BigTextStyle();
 			secondPageStyle.setBigContentTitle("Details").bigText(
@@ -111,13 +111,12 @@ public class MainActivity extends Activity {
 			Notification secondPageNotification = new NotificationCompat.Builder(
 					this).setStyle(secondPageStyle).build();
 
-			
 			// Create main notification and add the second page
-			Notification twoPageNotification = new WearableNotifications.Builder(
-					notificationBuilder)
-				.addPage(secondPageNotification)
-				.addRemoteInputForContentIntent(remoteInput)
-				.build();
+						Notification twoPageNotification = new WearableNotifications.Builder(
+								notificationBuilder)
+							.addPage(secondPageNotification)
+							.addRemoteInputForContentIntent(remoteInput)
+							.build();
 
 			// Get an instance of the NotificationManager service
 			NotificationManagerCompat notificationManager = NotificationManagerCompat

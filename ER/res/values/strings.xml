@@ -4,7 +4,7 @@
     <string name="app_name">ER</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-	<string name="submit_button_text">Submit</string>
+	<string name="submit_button_text">Submit Patient Query</string>
 	<string name="msg">sendMessage</string>
     <string-array name="plan_array">
         <item>Shall we send patient to the operating room?</item>
@@ -26,4 +26,5 @@
         <item>James McBryde</item>
         <item>Lisa Sampson</item>
     </string-array>
+    <string name="edittextdefaultinstruction">Please note the condition or ailment of the Patient</string>
 </resources>
