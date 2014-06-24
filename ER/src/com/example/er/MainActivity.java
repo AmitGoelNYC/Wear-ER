@@ -1,5 +1,6 @@
 package com.example.er;
 
+
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.Notification;
@@ -7,7 +8,6 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.preview.support.v4.app.NotificationManagerCompat;
+import android.preview.support.wearable.notifications.RemoteInput;
 import android.preview.support.wearable.notifications.WearableNotifications;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationCompat.BigTextStyle;
@@ -88,12 +89,17 @@ public class MainActivity extends Activity {
 					.setContentTitle("Patient")
 					.setContentText(
 							patient
-									+ " in Critical Care needs Urgent injection of .. 30 cc's")
+									+ " in Critical Care need immediate assistance")
 					.setContentIntent(viewPendingIntent)
 					.setLargeIcon(
 							BitmapFactory.decodeResource(getResources(),
 									R.drawable.rsz_darkblu));
-
+					
+			// Create the remote input
+			RemoteInput remoteInput = new RemoteInput.Builder("Reply")
+			        .setLabel("Reply")
+			        .build();
+			
 			// Create a big text style for the second page
 			BigTextStyle secondPageStyle = new NotificationCompat.BigTextStyle();
 			secondPageStyle.setBigContentTitle("Details").bigText(
@@ -105,9 +111,13 @@ public class MainActivity extends Activity {
 			Notification secondPageNotification = new NotificationCompat.Builder(
 					this).setStyle(secondPageStyle).build();
 
+			
 			// Create main notification and add the second page
 			Notification twoPageNotification = new WearableNotifications.Builder(
-					notificationBuilder).addPage(secondPageNotification).build();
+					notificationBuilder)
+				.addPage(secondPageNotification)
+				.addRemoteInputForContentIntent(remoteInput)
+				.build();
 
 			// Get an instance of the NotificationManager service
 			NotificationManagerCompat notificationManager = NotificationManagerCompat
