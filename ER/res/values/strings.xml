@@ -7,12 +7,12 @@
 	<string name="submit_button_text">Submit</string>
 	<string name="msg">sendMessage</string>
     <string-array name="plan_array">
-        <item>Send to operating room</item>
-        <item>Shall we proceed with procedure</item>
-        <item>Need you to call immediately</item>
-        <item>Perform Angiogram</item>
-        <item>Please advise</item>
-        <item>Is current procedure ok</item>
+        <item>Shall we send patient to the operating room?</item>
+        <item>Shall we proceed with procedure?</item>
+        <item>Need you to call immediately.</item>
+        <item>Shall we perform an Angiogram?</item>
+        <item>Please advise.</item>
+        <item>Is current procedure ok?</item>
         <!-- <item>Lipton</item>
         <item>Henry</item> -->
     </string-array>
@@ -23,7 +23,7 @@
         <item>Clint Dempsey</item>
         <item>Luis Suarez</item>
         <item>Lionel Messi</item>
-        <item>james McBryde</item>
+        <item>James McBryde</item>
         <item>Lisa Sampson</item>
     </string-array>
 </resources>

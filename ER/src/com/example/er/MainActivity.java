@@ -66,7 +66,6 @@ public class MainActivity extends Activity {
 
 	protected void sendMessage() {
 		String input = edittext.getText().toString();
-		Log.i("yes", input);
 		if(!input.equals("")){
 			int notificationId = 001;
 			// Build intent for notification content
@@ -100,7 +99,7 @@ public class MainActivity extends Activity {
 			secondPageStyle.setBigContentTitle("Details").bigText(
 					/*"Vitals  BP - 140/100.  HR - 145.  Currently bleeding internally."
 							+ "Requesting immediate assistance"*/
-					 input + " " + spinner.getSelectedItem().toString() + "?");
+					 input + " " + spinner.getSelectedItem().toString());
 
 			// Create second page notification
 			Notification secondPageNotification = new NotificationCompat.Builder(
