@@ -14,23 +14,34 @@
         android:layout_marginLeft="140dp"
         android:layout_marginRight="140dp"
         android:layout_marginTop="20dp" />
+
+    <EditText
+        android:id="@+id/edittext"
+        android:hint="Please explain the condition or ailment of patient"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/spinner"
+        android:layout_marginLeft="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginTop="20dp" />
+
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/edittext"
         android:layout_marginLeft="140dp"
         android:layout_marginRight="140dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/spinner" />
+        android:layout_marginTop="20dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner1" 
+        android:layout_below="@+id/spinner1"
         android:layout_centerHorizontal="true"
-        android:text="@string/submit_button_text"
         android:layout_marginTop="200dp"
-        android:onClick="@string/msg" />
+        android:onClick="@string/msg"
+        android:text="@string/submit_button_text" />
 
 </RelativeLayout>
